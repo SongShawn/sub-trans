@@ -1,0 +1,13 @@
+name: Deploy to Cloudflare Worker
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Deploy via Wrangler
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: eY5N1EeJgEY0_hBFhPmqHiBZInM3GOiYKSEoZtGI
+          scriptPath: "worker.js"
